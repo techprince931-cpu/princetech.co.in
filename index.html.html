@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PrinceTech offers professional home & office repair services including AC repair, electrical, plumbing, appliance maintenance, wiring, and CCTV installation." />
+    <meta name="keywords" content="AC repair, electrical services, plumbing, appliance maintenance, wiring, CCTV installation, home repair, office repair" />
+    <meta name="author" content="PrinceTech" />
+    <title>PrinceTech – Professional Home & Office Repair Services</title>
+
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== ROOT VARIABLES ===== */
+        :root {
+            --primary-dark: #0e465b;
+            --primary-light: #1a5f7a;
+            --primary-lighter: #2a7a9a;
+            --accent-orange: #f58a2e;
+            --accent-orange-light: #f7a85a;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --gray-light: #e9ecef;
+            --gray-mid: #adb5bd;
+            --text-dark: #1e2a3a;
+            --shadow-sm: 0 4px 20px rgba(14, 70, 91, 0.08);
+            --shadow-md: 0 8px 40px rgba(14, 70, 91, 0.12);
+            --shadow-lg: 0 16px 60px rgba(14, 70, 91, 0.18);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --radius: 16px;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== UTILITY ===== */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 2.4rem;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title span {
+            color: var(--accent-orange);
+        }
+
+        .section-subtitle {
+            color: var(--gray-mid);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-title-sm {
+            font-weight: 700;
+            font-size: 1.75rem;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+        }
+
+        .badge-accent {
+            display: inline-block;
+            background: rgba(245, 138, 46, 0.12);
+            color: var(--accent-orange);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary-custom {
+            background: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(245, 138, 46, 0.35);
+        }
+        .btn-primary-custom:hover {
+            background: #e07a20;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 138, 46, 0.45);
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .btn-outline-custom:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+            border-color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline-dark-custom {
+            background: transparent;
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-dark);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .btn-outline-dark-custom:hover {
+            background: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 70, 91, 0.25);
+        }
+
+        .btn-orange-outline {
+            background: transparent;
+            color: var(--accent-orange);
+            border: 2px solid var(--accent-orange);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .btn-orange-outline:hover {
+            background: var(--accent-orange);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 138, 46, 0.3);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar-custom {
+            background: transparent;
+            padding: 16px 0;
+            transition: var(--transition);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1050;
+        }
+
+        .navbar-custom.scrolled {
+            background: rgba(14, 70, 91, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-custom .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+        .navbar-custom .navbar-brand span {
+            color: var(--accent-orange);
+        }
+
+        .navbar-custom .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem !important;
+            transition: var(--transition);
+            position: relative;
+        }
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: var(--white) !important;
+        }
+        .navbar-custom .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: var(--transition);
+        }
+        .navbar-custom .nav-link:hover::after,
+        .navbar-custom .nav-link.active::after {
+            width: 60%;
+        }
+
+        .navbar-custom .navbar-toggler {
+            border: none;
+            padding: 0;
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+        .navbar-custom .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-custom .navbar-collapse {
+            background: transparent;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-custom .navbar-collapse {
+                background: rgba(14, 70, 91, 0.98);
+                padding: 20px;
+                border-radius: var(--radius);
+                margin-top: 12px;
+                backdrop-filter: blur(12px);
+            }
+            .navbar-custom .nav-link::after {
+                display: none;
+            }
+            .navbar-custom .nav-link {
+                padding: 0.6rem 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+            .navbar-custom .nav-link:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--primary-dark);
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(14, 70, 91, 0.92) 0%, rgba(14, 70, 91, 0.70) 50%, rgba(14, 70, 91, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80') center center / cover no-repeat;
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--white), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 60px 0 40px;
+        }
+
+        .hero-content .badge-accent {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-weight: 800;
+            font-size: 3.8rem;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            line-height: 1.12;
+            margin-bottom: 1.2rem;
+        }
+        .hero-content h1 span {
+            color: var(--accent-orange);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 540px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-content .btn-group-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .hero-stats-mini {
+            margin-top: 3rem;
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-stats-mini .stat-item {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .hero-stats-mini .stat-item i {
+            color: var(--accent-orange);
+            font-size: 1.4rem;
+        }
+        .hero-stats-mini .stat-item strong {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-right: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .hero-content .btn-group-cta .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .hero-stats-mini {
+                gap: 1.2rem;
+            }
+            .hero-stats-mini .stat-item {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 92vh;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content .btn-group-cta .btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.5rem;
+            }
+        }
+
+        /* ===== SERVICES ===== */
+        .services-section {
+            background: var(--off-white);
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.2rem 1.8rem;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card .icon-wrapper {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(245, 138, 46, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            transition: var(--transition);
+        }
+        .service-card:hover .icon-wrapper {
+            background: var(--accent-orange);
+        }
+        .service-card .icon-wrapper i {
+            font-size: 2rem;
+            color: var(--accent-orange);
+            transition: var(--transition);
+        }
+        .service-card:hover .icon-wrapper i {
+            color: var(--white);
+        }
+
+        .service-card h5 {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .service-card p {
+            color: var(--gray-mid);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-section {
+            background: var(--white);
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 1.8rem 1.2rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            background: var(--off-white);
+            border: 1px solid transparent;
+            height: 100%;
+        }
+        .why-card:hover {
+            background: var(--white);
+            border-color: rgba(245, 138, 46, 0.2);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-4px);
+        }
+        .why-card .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(245, 138, 46, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .why-card .icon-circle i {
+            font-size: 1.6rem;
+            color: var(--accent-orange);
+        }
+        .why-card h6 {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+        .why-card p {
+            color: var(--gray-mid);
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-section {
+            background: var(--off-white);
+        }
+        .about-image-wrapper {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--primary-dark);
+            min-height: 300px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light)),
+                url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80') center center / cover no-repeat;
+        }
+        .about-stats-mini {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .about-stats-mini .stat-box {
+            background: var(--white);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border-left: 3px solid var(--accent-orange);
+        }
+        .about-stats-mini .stat-box .number {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+        }
+        .about-stats-mini .stat-box .label {
+            font-size: 0.8rem;
+            color: var(--gray-mid);
+        }
+
+        /* ===== PROCESS ===== */
+        .process-section {
+            background: var(--white);
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 0 0.5rem;
+        }
+        .process-step .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--primary-dark);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            position: relative;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(14, 70, 91, 0.2);
+        }
+        .process-step:hover .step-number {
+            background: var(--accent-orange);
+            transform: scale(1.06);
+            box-shadow: 0 8px 30px rgba(245, 138, 46, 0.35);
+        }
+        .process-step .step-number .bi {
+            font-size: 0;
+            transition: var(--transition);
+        }
+        .process-step h6 {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+        .process-step p {
+            color: var(--gray-mid);
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        .process-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-light);
+            font-size: 1.8rem;
+        }
+        @media (max-width: 768px) {
+            .process-connector {
+                display: none;
+            }
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: var(--off-white);
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid transparent;
+        }
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(245, 138, 46, 0.15);
+            transform: translateY(-4px);
+        }
+        .testimonial-card .stars {
+            color: var(--accent-orange);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+        .testimonial-card .quote {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+        .testimonial-card .customer {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .testimonial-card .customer .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-dark);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .testimonial-card .customer .info h6 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: var(--text-dark);
+        }
+        .testimonial-card .customer .info small {
+            color: var(--gray-mid);
+            font-size: 0.8rem;
+        }
+
+        /* ===== STATISTICS ===== */
+        .stats-section {
+            background: var(--primary-dark);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBhMjAgMjAgMCAwIDAtMjAgMjAgMjAgMjAgMCAwIDAgMjAgMjAgMjAgMjAgMCAwIDAgMjAtMjAgMjAgMjAgMCAwIDAtMjAtMjB6bTAgMzZhMTYgMTYgMCAwIDEgMC0zMiAxNiAxNiAwIDAgMSAwIDMyeiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+
+        .stat-item-large {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 0.5rem;
+        }
+        .stat-item-large .number {
+            font-weight: 800;
+            font-size: 3.2rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        .stat-item-large .number .suffix {
+            color: var(--accent-orange);
+        }
+        .stat-item-large .label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            background: var(--white);
+        }
+
+        .contact-info-card {
+            background: var(--off-white);
+            border-radius: var(--radius);
+            padding: 1.8rem 1.5rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent-orange);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .contact-info-card:hover {
+            box-shadow: var(--shadow-sm);
+            transform: translateX(4px);
+        }
+        .contact-info-card .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(245, 138, 46, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-info-card .icon i {
+            font-size: 1.4rem;
+            color: var(--accent-orange);
+        }
+        .contact-info-card .content h6 {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.1rem;
+            color: var(--text-dark);
+        }
+        .contact-info-card .content p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--gray-mid);
+        }
+
+        .contact-form-wrapper {
+            background: var(--off-white);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-form-wrapper .form-control {
+            border-radius: 12px;
+            padding: 0.75rem 1.2rem;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        .contact-form-wrapper .form-control:focus {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 4px rgba(245, 138, 46, 0.12);
+        }
+        .contact-form-wrapper .form-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 60px 0 30px;
+        }
+        .footer h5 {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+        .footer .brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+        .footer .brand span {
+            color: var(--accent-orange);
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .footer ul li a:hover {
+            color: var(--accent-orange);
+            padding-left: 6px;
+        }
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            transition: var(--transition);
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .footer .social-icons a:hover {
+            background: var(--accent-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 138, 46, 0.3);
+        }
+        .footer .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== BACK TO TOP ===== */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 20px rgba(245, 138, 46, 0.35);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 1040;
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #backToTop:hover {
+            background: #e07a20;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(245, 138, 46, 0.5);
+        }
+
+        /* ===== RESPONSIVE FINE-TUNE ===== */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .stat-item-large .number {
+                font-size: 2.4rem;
+            }
+            .about-stats-mini {
+                grid-template-columns: 1fr 1fr;
+            }
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+            .footer .col-lg-3 {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .stat-item-large .number {
+                font-size: 2rem;
+            }
+            .about-stats-mini {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+            .about-stats-mini .stat-box {
+                padding: 0.6rem 0.8rem;
+            }
+            .about-stats-mini .stat-box .number {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">Prince<span>Tech</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item ms-lg-2">
+                    <a href="#contact" class="btn btn-primary-custom btn-sm px-4 py-2">Book Now</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge-accent"><i class="bi bi-tools me-1"></i> Trusted Since 2016</span>
+                <h1>Professional Home &amp; <span>Office</span> Repair Services</h1>
+                <p>
+                    PrinceTech delivers reliable, fast, and affordable repair solutions
+                    for your home and office — from AC and electrical to plumbing and CCTV.
+                </p>
+                <div class="btn-group-cta">
+                    <a href="#contact" class="btn btn-primary-custom"><i class="bi bi-calendar-check me-2"></i>Book a Service</a>
+                    <a href="tel:+1234567890" class="btn btn-outline-custom"><i class="bi bi-telephone me-2"></i>Call Now</a>
+                </div>
+                <div class="hero-stats-mini">
+                    <span class="stat-item"><i class="bi bi-person-check"></i> <strong>4,800+</strong> Happy Customers</span>
+                    <span class="stat-item"><i class="bi bi-gear"></i> <strong>12,000+</strong> Services Done</span>
+                    <span class="stat-item"><i class="bi bi-star-fill"></i> <strong>4.9</strong> Avg. Rating</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-section section-padding" id="services">
+    <div class="container">
+        <div class="text-center fade-up">
+            <span class="badge-accent"><i class="bi bi-grid-3x3-gap-fill me-1"></i> Our Services</span>
+            <h2 class="section-title">What We <span>Offer</span></h2>
+            <p class="section-subtitle">Comprehensive repair and maintenance solutions for every need.</p>
+        </div>
+        <div class="row g-4">
+            <!-- 1 -->
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="service-card">
+                    <div class="icon-wrapper"><i class="bi bi-snow2"></i></div>
+                    <h5>AC Repair &amp; Installation</h5>
+                    <p>Fast, reliable AC repair, servicing, and new installation for homes and offices.</p>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="service-card">
+                    <div class="icon-wrapper"><i class="bi bi-lightning-charge"></i></div>
+                    <h5>Electrical Services</h5>
+                    <p>Safe and certified electrical repairs, panel upgrades, and lighting solutions.</p>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="service-card">
+                    <div class="icon-wrapper"><i class="bi bi-droplet"></i></div>
+                    <h5>Plumbing Solutions</h5>
+                    <p>Expert plumbing repairs, pipe installations, and leak detection services.</p>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="service-card">
+                    <div class="icon-wrapper"><i class="bi bi-wrench"></i></div>
+                    <h5>Appliance Maintenance</h5>
+                    <p>Regular maintenance and repair for all major home and office appliances.</p>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="service-card">
+                    <div class="icon-wrapper"><i class="bi bi-layers"></i></div>
+                    <h5>Wiring Services</h5>
+                    <p>Professional wiring, rewiring, and electrical system upgrades for safety.</p>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="service-card">
+                    <div class="icon-wrapper"><i class="bi bi-camera-video"></i></div>
+                    <h5>CCTV Installation</h5>
+                    <p>Complete CCTV system design, installation, and maintenance for security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="why-section section-padding" id="why">
+    <div class="container">
+        <div class="text-center fade-up">
+            <span class="badge-accent"><i class="bi bi-patch-check-fill me-1"></i> Why Choose Us</span>
+            <h2 class="section-title">Built on <span>Trust</span> &amp; Quality</h2>
+            <p class="section-subtitle">We bring professionalism, reliability, and care to every job.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="why-card">
+                    <div class="icon-circle"><i class="bi bi-person-badge"></i></div>
+                    <h6>Certified Technicians</h6>
+                    <p>All our technicians are licensed, insured, and continuously trained.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="why-card">
+                    <div class="icon-circle"><i class="bi bi-coin"></i></div>
+                    <h6>Affordable Pricing</h6>
+                    <p>Transparent, competitive rates with no hidden charges — ever.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="why-card">
+                    <div class="icon-circle"><i class="bi bi-clock-history"></i></div>
+                    <h6>Same Day Service</h6>
+                    <p>We understand urgency. Most services are completed on the same day.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="why-card">
+                    <div class="icon-circle"><i class="bi bi-shield-check"></i></div>
+                    <h6>Quality Guarantee</h6>
+                    <p>We stand behind our work with a 100% satisfaction guarantee.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="why-card">
+                    <div class="icon-circle"><i class="bi bi-headset"></i></div>
+                    <h6>24/7 Support</h6>
+                    <p>Round-the-clock customer support for emergencies and inquiries.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up">
+                <div class="why-card">
+                    <div class="icon-circle"><i class="bi bi-trophy"></i></div>
+                    <h6>Trusted Professionals</h6>
+                    <p>Thousands of satisfied customers trust us for their repair needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-section section-padding" id="about">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 fade-up">
+                <span class="badge-accent"><i class="bi bi-info-circle-fill me-1"></i> About Us</span>
+                <h2 class="section-title">Your Trusted <span>Repair</span> Partner</h2>
+                <p class="text-muted" style="font-size:1.05rem;">
+                    PrinceTech has been serving homes and businesses with top-tier repair
+                    and maintenance services since 2016. Our mission is simple:
+                    <strong>deliver quality, reliability, and peace of mind</strong>.
+                </p>
+                <p class="text-muted">
+                    From AC repairs to full electrical overhauls, we combine technical
+                    expertise with a customer-first approach. Every job is handled with
+                    precision, care, and a commitment to excellence.
+                </p>
+                <div class="about-stats-mini">
+                    <div class="stat-box">
+                        <div class="number">8+</div>
+                        <div class="label">Years Experience</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">4.9★</div>
+                        <div class="label">Customer Rating</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">100%</div>
+                        <div class="label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">24/7</div>
+                        <div class="label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 fade-up">
+                <div class="about-image-wrapper" style="min-height:350px; border-radius:var(--radius);"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process-section section-padding" id="process">
+    <div class="container">
+        <div class="text-center fade-up">
+            <span class="badge-accent"><i class="bi bi-diagram-3-fill me-1"></i> How It Works</span>
+            <h2 class="section-title">Our <span>Process</span></h2>
+            <p class="section-subtitle">Four simple steps to get your repair done seamlessly.</p>
+        </div>
+        <div class="row align-items-center g-4">
+            <div class="col-md-3 col-6 fade-up">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h6>Book Service</h6>
+                    <p>Call or fill out our form to schedule a visit.</p>
+                </div>
+            </div>
+            <div class="col-md-1 col-6 d-none d-md-block process-connector fade-up">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+            <div class="col-md-3 col-6 fade-up">
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h6>Technician Visit</h6>
+                    <p>Our expert arrives on time for inspection.</p>
+                </div>
+            </div>
+            <div class="col-md-1 col-6 d-none d-md-block process-connector fade-up">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+            <div class="col-md-3 col-6 fade-up">
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h6>Repair &amp; Inspection</h6>
+                    <p>Thorough repair and quality inspection.</p>
+                </div>
+            </div>
+            <div class="col-md-1 col-6 d-none d-md-block process-connector fade-up">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+            <div class="col-md-3 col-6 fade-up">
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h6>Service Completion</h6>
+                    <p>Final check and follow-up support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section section-padding" id="testimonials">
+    <div class="container">
+        <div class="text-center fade-up">
+            <span class="badge-accent"><i class="bi bi-chat-quote-fill me-1"></i> Testimonials</span>
+            <h2 class="section-title">What Our <span>Customers</span> Say</h2>
+            <p class="section-subtitle">Real feedback from real people we've helped.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 fade-up">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="quote">"PrinceTech fixed our AC in under 2 hours. Professional, polite, and incredibly efficient. Highly recommended!"</p>
+                    <div class="customer">
+                        <div class="avatar">JD</div>
+                        <div class="info">
+                            <h6>John Deacon</h6>
+                            <small>Homeowner, London</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 fade-up">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="quote">"They handled our office electrical upgrade flawlessly. Minimal downtime and great communication throughout."</p>
+                    <div class="customer">
+                        <div class="avatar">SR</div>
+                        <div class="info">
+                            <h6>Sarah Richards</h6>
+                            <small>Office Manager, Birmingham</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 fade-up">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="quote">"The CCTV installation was seamless. They explained everything and the quality is outstanding. Thank you, PrinceTech!"</p>
+                    <div class="customer">
+                        <div class="avatar">MT</div>
+                        <div class="info">
+                            <h6>Michael Turner</h6>
+                            <small>Business Owner, Manchester</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== STATISTICS ===== -->
+<section class="stats-section" id="stats">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-6 col-lg-3 fade-up">
+                <div class="stat-item-large">
+                    <div class="number"><span class="counter" data-target="4800">0</span><span class="suffix">+</span></div>
+                    <div class="label">Happy Customers</div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 fade-up">
+                <div class="stat-item-large">
+                    <div class="number"><span class="counter" data-target="12000">0</span><span class="suffix">+</span></div>
+                    <div class="label">Services Completed</div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 fade-up">
+                <div class="stat-item-large">
+                    <div class="number"><span class="counter" data-target="45">0</span><span class="suffix">+</span></div>
+                    <div class="label">Expert Technicians</div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 fade-up">
+                <div class="stat-item-large">
+                    <div class="number"><span class="counter" data-target="8">0</span><span class="suffix">+</span></div>
+                    <div class="label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section section-padding" id="contact">
+    <div class="container">
+        <div class="text-center fade-up">
+            <span class="badge-accent"><i class="bi bi-envelope-paper-fill me-1"></i> Get in Touch</span>
+            <h2 class="section-title">Contact <span>Us</span></h2>
+            <p class="section-subtitle">Have a question or need a service? Reach out — we're here to help.</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-5 fade-up">
+                <div class="d-flex flex-column gap-3">
+                    <div class="contact-info-card">
+                        <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                        <div class="content">
+                            <h6>Address</h6>
+                            <p>123 Repair Street, London, UK</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="icon"><i class="bi bi-telephone"></i></div>
+                        <div class="content">
+                            <h6>Phone</h6>
+                            <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="icon"><i class="bi bi-envelope"></i></div>
+                        <div class="content">
+                            <h6>Email</h6>
+                            <p><a href="mailto:info@princetech.com">info@princetech.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="icon"><i class="bi bi-clock"></i></div>
+                        <div class="content">
+                            <h6>Working Hours</h6>
+                            <p>Mon – Sat: 8:00 AM – 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 fade-up">
+                <div class="contact-form-wrapper">
+                    <h5 class="fw-bold mb-3">Send Us a Message</h5>
+                    <form id="contactForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Your name" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="you@example.com" required />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="Your phone number" />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Service Needed</label>
+                                <select class="form-select">
+                                    <option value="">Select a service...</option>
+                                    <option>AC Repair &amp; Installation</option>
+                                    <option>Electrical Services</option>
+                                    <option>Plumbing Solutions</option>
+                                    <option>Appliance Maintenance</option>
+                                    <option>Wiring Services</option>
+                                    <option>CCTV Installation</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" rows="4" placeholder="Tell us about your repair needs..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary-custom w-100">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="brand">Prince<span>Tech</span></div>
+                <p class="mt-3" style="font-size:0.9rem; max-width:300px;">
+                    Professional home &amp; office repair services you can trust.
+                    Quality, reliability, and care — every time.
+                </p>
+                <div class="social-icons mt-3">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Our Services</h5>
+                <ul>
+                    <li><a href="#services">AC Repair</a></li>
+                    <li><a href="#services">Electrical</a></li>
+                    <li><a href="#services">Plumbing</a></li>
+                    <li><a href="#services">CCTV Installation</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Info</h5>
+                <ul>
+                    <li><i class="bi bi-geo-alt me-2" style="color:var(--accent-orange);"></i>123 Repair St, London</li>
+                    <li><i class="bi bi-telephone me-2" style="color:var(--accent-orange);"></i>+1 (234) 567-890</li>
+                    <li><i class="bi bi-envelope me-2" style="color:var(--accent-orange);"></i>info@princetech.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            &copy; 2026 <strong>PrinceTech</strong>. All rights reserved. Built with <i class="bi bi-heart-fill" style="color:var(--accent-orange);"></i>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" aria-label="Back to top"><i class="bi bi-chevron-up"></i></button>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+    (function() {
+        'use strict';
+
+        // ===== NAVBAR SCROLL =====
+        const nav = document.getElementById('mainNav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+
+            // Back to top button
+            const btn = document.getElementById('backToTop');
+            if (currentScroll > 500) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        // ===== BACK TO TOP CLICK =====
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== SMOOTH SCROLL FOR NAV LINKS =====
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        const offset = 80;
+                        const top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                        // Close mobile menu
+                        const collapse = document.getElementById('navMenu');
+                        const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                        if (bsCollapse) bsCollapse.hide();
+                    }
+                }
+            });
+        });
+
+        // ===== SCROLL ANIMATIONS (Intersection Observer) =====
+        const fadeEls = document.querySelectorAll('.fade-up');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -20px 0px'
+            });
+            fadeEls.forEach(function(el) {
+                observer.observe(el);
+            });
+        } else {
+            // Fallback: show all
+            fadeEls.forEach(function(el) {
+                el.classList.add('visible');
+            });
+        }
+
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.counter');
+        let countersAnimated = false;
+
+        function animateCounters() {
+            if (countersAnimated) return;
+            const statsSection = document.getElementById('stats');
+            if (!statsSection) return;
+            const rect = statsSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60 && rect.bottom > 0) {
+                countersAnimated = true;
+                counters.forEach(function(counter) {
+                    const target = parseInt(counter.getAttribute('data-target'), 10);
+                    if (isNaN(target) || target < 0) return;
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function updateCounter(time) {
+                        const elapsed = time - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease-out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(eased * target);
+                        counter.textContent = current.toLocaleString();
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString();
+                        }
+                    }
+                    requestAnimationFrame(updateCounter);
+                });
+            }
+        }
+
+        // Check counters on scroll and load
+        window.addEventListener('scroll', animateCounters);
+        window.addEventListener('load', function() {
+            // small delay to let layout settle
+            setTimeout(animateCounters, 300);
+        });
+
+        // ===== CONTACT FORM =====
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i> Sent!';
+                btn.disabled = true;
+                btn.style.opacity = '0.8';
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    form.reset();
+                }, 3000);
+            });
+        }
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            const scrollY = window.pageYOffset + 120;
+            sections.forEach(function(section) {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                if (scrollY >= top && scrollY < top + height) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ===== SERVICE CARD CLICK (optional: navigate to contact) =====
+        document.querySelectorAll('.service-card').forEach(function(card, index) {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                // optional: pre-fill service? for now just scroll to contact
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+    })();
+</script>
+
+</body>
+</html>
